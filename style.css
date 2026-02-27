@@ -95,4 +95,11 @@ select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd;
     animation: spin 1s linear infinite;
 }
 
+.mode-description {
+    font-size: 0.7rem;
+    color: #95a5a6;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
 @keyframes spin { to { transform: rotate(360deg); } }

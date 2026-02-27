@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GeoExpert - Pro Challenge</title>
+    <title>GeoExpert Pro - World Challenge</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div id="start-screen">
     <div class="menu-card">
-        <h1 style="margin: 0 0 10px 0;">GeoExpert</h1>
+        <h1 style="margin: 0 0 5px 0;">GeoExpert</h1>
         <p style="color: #7f8c8d; margin-bottom: 20px;">World Geography Challenge</p>
+
         <div class="setting-item">
             <label>GAME MODE</label>
             <select id="initial-mode">
@@ -20,9 +21,16 @@
                 <option value="endless">Endless Mode</option>
             </select>
         </div>
+
         <div class="setting-item">
             <label><input type="checkbox" id="initial-hard"> HARD MODE (No Move/Zoom)</label>
         </div>
+
+        <div class="setting-item">
+            <label><input type="checkbox" id="initial-country"> COUNTRY MODE (Identify Country)</label>
+            <p style="font-size: 0.65rem; color: #95a5a6; margin: 2px 0 0 20px;">Guess the correct country to win.</p>
+        </div>
+
         <button id="start-btn" class="btn" onclick="startGame()">Start Game</button>
     </div>
 </div>
@@ -43,15 +51,21 @@
     <div class="setting-item">
         <label><input type="checkbox" id="panel-hard"> HARD MODE</label>
     </div>
+    <div class="setting-item">
+        <label><input type="checkbox" id="panel-country"> COUNTRY MODE</label>
+    </div>
     <button class="btn" style="background: #e74c3c; color: white; font-size: 0.8rem;" onclick="restartWithNewSettings()">Apply & Restart</button>
 </div>
 
 <div id="loading">
     <div class="spinner"></div>
-    <p style="margin-top: 20px;">Locating Panorama...</p>
+    <p style="margin-top: 20px;">Fetching Location...</p>
 </div>
 
-<div id="round-indicator">ROUND <span id="cur-r">1</span> / <span id="max-r">5</span></div>
+<div id="round-indicator">
+    ROUND <span id="cur-r">1</span> / <span id="max-r">5</span>
+    <div id="mode-badge" style="font-size: 0.6rem; color: var(--secondary); margin-top: 2px; display: none;">COUNTRY MODE</div>
+</div>
 
 <div id="hud">
     <div id="info-text">Analyze the environment...</div>
