@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoExpert - Pro Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="start-screen">
+    <div class="menu-card">
+        <h1 style="margin: 0 0 10px 0;">GeoExpert</h1>
+        <p style="color: #7f8c8d; margin-bottom: 20px;">World Geography Challenge</p>
+        <div class="setting-item">
+            <label>GAME MODE</label>
+            <select id="initial-mode">
+                <option value="5">5 Rounds</option>
+                <option value="10">10 Rounds</option>
+                <option value="endless">Endless Mode</option>
+            </select>
+        </div>
+        <div class="setting-item">
+            <label><input type="checkbox" id="initial-hard"> HARD MODE (No Move/Zoom)</label>
+        </div>
+        <button id="start-btn" class="btn" onclick="startGame()">Start Game</button>
+    </div>
+</div>
+
+<div id="burger-menu" onclick="toggleSettings()">
+    <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+</div>
+
+<div id="settings-panel">
+    <div class="setting-item">
+        <label>CHANGE MODE</label>
+        <select id="panel-mode">
+            <option value="5">5 Rounds</option>
+            <option value="10">10 Rounds</option>
+            <option value="endless">Endless Mode</option>
+        </select>
+    </div>
+    <div class="setting-item">
+        <label><input type="checkbox" id="panel-hard"> HARD MODE</label>
+    </div>
+    <button class="btn" style="background: #e74c3c; color: white; font-size: 0.8rem;" onclick="restartWithNewSettings()">Apply & Restart</button>
+</div>
+
+<div id="loading">
+    <div class="spinner"></div>
+    <p style="margin-top: 20px;">Locating Panorama...</p>
+</div>
+
+<div id="round-indicator">ROUND <span id="cur-r">1</span> / <span id="max-r">5</span></div>
+
+<div id="hud">
+    <div id="info-text">Analyze the environment...</div>
+    <div id="result-box" style="display: none;">
+        <span id="score-val">0 pts</span>
+        <div id="dist-text" style="color: #7f8c8d; font-weight: 600;">0 km away</div>
+    </div>
+    <button id="confirm-btn" class="btn" onclick="confirmGuess()">Lock Guess</button>
+    <button id="next-btn" class="btn" onclick="nextRound()">Continue</button>
+</div>
+
+<div id="pano"></div>
+<div id="map-container">
+    <div id="map"></div>
+</div>
+
+<script src="config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
