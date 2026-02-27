@@ -1,0 +1,98 @@
+:root {
+    --primary: #2ecc71;
+    --secondary: #3498db;
+    --dark: #2c3e50;
+    --glass: rgba(255, 255, 255, 0.95);
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+    background: #1a1a1a;
+    color: var(--dark);
+}
+
+#pano { height: 100vh; width: 100%; background: #000; }
+
+#start-screen {
+    position: fixed; inset: 0;
+    background: rgba(26, 26, 26, 0.98);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    z-index: 2000; transition: opacity 0.5s;
+}
+
+.menu-card {
+    background: white; padding: 40px; border-radius: 20px;
+    width: 350px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+#burger-menu {
+    position: absolute; top: 20px; right: 20px;
+    z-index: 1000; cursor: pointer;
+    background: var(--glass); padding: 12px; border-radius: 8px;
+}
+
+.bar { width: 25px; height: 3px; background: var(--dark); margin: 4px 0; }
+
+#settings-panel {
+    position: absolute; top: 80px; right: 20px; z-index: 1000;
+    background: var(--glass); padding: 25px; border-radius: 15px;
+    width: 240px; display: none; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+#hud {
+    position: absolute; top: 25px; left: 50%; transform: translateX(-50%);
+    background: var(--glass); padding: 15px 40px; border-radius: 60px;
+    text-align: center; z-index: 100; box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    min-width: 380px;
+}
+
+#round-indicator {
+    position: absolute; top: 35px; left: 40px; color: white;
+    background: rgba(0,0,0,0.7); padding: 10px 25px; border-radius: 30px;
+    z-index: 100; font-weight: 700; font-size: 0.9rem;
+}
+
+#map-container {
+    position: absolute; bottom: 30px; right: 30px; z-index: 99;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 4px solid white; border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+#map { width: 300px; height: 220px; background: #ddd; }
+
+#map-container:hover #map { width: 680px; height: 480px; }
+
+.btn {
+    padding: 14px 25px; border: none; border-radius: 30px;
+    cursor: pointer; font-weight: 700; text-transform: uppercase;
+    width: 100%; margin-top: 15px; transition: 0.2s;
+}
+
+#start-btn { background: var(--primary); color: white; font-size: 1.1rem; }
+#confirm-btn { background: var(--primary); color: white; display: none; }
+#next-btn { background: var(--secondary); color: white; display: none; }
+
+#score-val { font-weight: 800; color: var(--primary); font-size: 2.2rem; }
+
+.setting-item { margin: 15px 0; text-align: left; }
+.setting-item label { font-size: 0.75rem; font-weight: 800; color: #95a5a6; display: block; margin-bottom: 5px; }
+select { width: 100%; padding: 10px; border-radius: 8px; border: 1px solid #ddd; }
+
+#loading {
+    position: fixed; inset: 0; background: #1a1a1a;
+    display: none; flex-direction: column; align-items: center;
+    justify-content: center; color: white; z-index: 1500;
+}
+
+.spinner {
+    width: 40px; height: 40px; border: 4px solid rgba(255,255,255,0.1);
+    border-top-color: var(--secondary); border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
