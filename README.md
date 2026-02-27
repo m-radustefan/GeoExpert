@@ -49,7 +49,7 @@ To prevent API key exposure and unauthorized usage, this project uses a decouple
 
 1.  **Clone the repository:**
     ```bash
-    git clone [https://github.com/yourusername/geoexpert-pro.git](https://github.com/yourusername/geoexpert-pro.git)
+    git clone https://github.com/m-radustefan/GeoExpert.git/
     cd geoexpert-pro
     ```
 
